@@ -1,14 +1,28 @@
+// app/login/page.tsx
 'use client';
+
 import React, { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 
 const Login: React.FC = () => {
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login logic here, e.g., API call
-    console.log({ email, password });
+    setLoading(true);
+    setError(null);
+
+    try {
+      // Memanggil fungsi login dari AuthContext
+      await login(email, password);
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong.');
+      setLoading(false); // Menghentikan loading jika terjadi error
+    }
   };
 
   return (
@@ -42,9 +56,17 @@ const Login: React.FC = () => {
               required
             />
           </div>
+          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
           <div className="form-control">
-            <button type="submit" className="btn btn-primary w-full">
-              Login
+            <button
+              type="submit"
+              className={`btn btn-primary w-full`}
+              disabled={loading}
+            >
+              {loading && (
+                <span className="loading loading-dots loading-xs"></span>
+              )}
+              {loading ? 'Logging in...' : 'Login'}
             </button>
           </div>
         </form>

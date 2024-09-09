@@ -1,3 +1,5 @@
+import { useAuth } from '../../../context/AuthContext';
+
 export default function Navbar() {
   return (
     <div className="navbar bg-base-100 glass sticky">

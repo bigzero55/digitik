@@ -12,10 +12,10 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
             <div className="text-xl font-bold p-0">MENU</div>
           </li>
           <li>
-            <a>Events</a>
+            <Link href="/dashboard/events">Event</Link>
           </li>
           <li>
-            <a>Peserta</a>
+            <Link href="/dashboard/participants">Peserta</Link>
           </li>
         </ul>
       </div>
