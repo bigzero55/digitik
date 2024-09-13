@@ -1,14 +1,29 @@
 import { NextResponse } from 'next/server';
-
-// Dummy data for example purposes
-let items = [
-  { id: 1, name: "Item 1" },
-  { id: 2, name: "Item 2" },
-];
+import { cookies } from 'next/headers';
 
 // Handle GET request
 export async function GET() {
-  return NextResponse.json(items); // Return the list of items
+  const token = cookies().get("token")
+  const url = process.env.BE_URL
+  try {
+    const response = await fetch(url+"api/events", {
+      method: "GET", 
+      headers: {
+        headers: { 
+          'Content-Type': 'application/json',
+          "Authorization": `Bearer ${token}`
+        },
+      }
+    })
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+
+    const data = await response.json();
+    return NextResponse.json(data)
+  } catch (error) {
+    return NextResponse.json(error)
+  }
 }
 
 // Handle POST request (to add a new item)
