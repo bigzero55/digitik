@@ -15,33 +15,25 @@ const Signup: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError(null); // Reset error
-
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_BE_URL + 'api/auth/signup',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            full_name: fullName,
-            username,
-            email,
-            password,
-          }),
-        }
-      );
+      const response = await fetch('api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          full_name: fullName,
+          username,
+          email,
+          password,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error('Failed to signup. Please try again.');
       }
-
       const data = await response.json();
       console.log('Signup successful:', data);
-
-      // Redirect ke dashboard setelah berhasil signup
-      router.push('/dashboard');
     } catch (err: any) {
       setError(err.message);
       console.error('Signup error:', err);

@@ -1,64 +1,72 @@
 // context/AuthContext.tsx
 'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 
+interface User {
+  email: string;
+}
+
 interface AuthContextProps {
-  user: any;
-  token: string | null;
+  user: User | null;
+  error: string | null;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<any>(null);
-  const [token, setToken] = useState<string | null>(null);
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-
-  useEffect(() => {
-    const storedToken = localStorage.getItem('token');
-    if (storedToken) {
-      setToken(storedToken);
-    }
-  }, []);
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BE_URL}api/auth/login`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password }),
-        }
-      );
+      const response = await fetch('/api/auth/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
 
       if (!response.ok) {
-        throw new Error('Login failed. Please check your credentials.');
+        const { message } = await response.json();
+        throw new Error(
+          message || 'Login failed. Please check your credentials.'
+        );
       }
 
+      // Assuming the server returns a user object or token
       const data = await response.json();
-      setToken(data.token);
-      localStorage.setItem('token', data.token);
-      setUser({ email }); // Optionally set more user details
-      router.push('/dashboard'); // Redirect to dashboard after successful login
-    } catch (err) {
-      throw err;
+      setUser({ email }); // Replace with actual user details if available
+      router.push('/dashboard');
+    } catch (err: any) {
+      setError(err.message);
     }
   };
 
-  const logout = () => {
-    setToken(null);
-    setUser(null);
-    localStorage.removeItem('token');
-    router.push('/login');
+  const logout = async () => {
+    try {
+      const response = await fetch('/api/auth/signout', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (!response.ok) {
+        const { message } = await response.json();
+        throw new Error(
+          message || 'Login failed. Please check your credentials.'
+        );
+      }
+      setUser(null);
+      router.push('/login');
+    } catch (error: any) {
+      setError(error.message);
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, login, logout }}>
+    <AuthContext.Provider value={{ user, error, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

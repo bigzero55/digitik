@@ -1,6 +1,8 @@
-import { useAuth } from '../../../context/AuthContext';
-
+'use client';
+import { useAuth } from '@/context/AuthContext';
 export default function Navbar() {
+  const { logout } = useAuth();
+
   return (
     <div className="navbar bg-base-100 glass sticky">
       <div className="flex-1">
@@ -53,7 +55,6 @@ export default function Navbar() {
               />
             </div>
           </div>
-
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
@@ -68,7 +69,7 @@ export default function Navbar() {
               <a>Settings</a>
             </li>
             <li>
-              <a>Logout</a>
+              <a onClick={logout}>Logout</a>
             </li>
           </ul>
         </div>
