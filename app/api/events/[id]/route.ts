@@ -1,22 +1,27 @@
 import { NextResponse } from 'next/server';
+const token = cookies().get("token")
 
-// Dummy data for example purposes
-let items = [
-  { id: 1, name: "Item 1" },
-  { id: 2, name: "Item 2" },
-  { id: 3, name: "Item 3" },
-];
-
-// Handle GET request to get item by ID
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const { id } = params;
-  
-  // Convert id to a number for comparison
-  const item = items.find((i) => i.id === parseInt(id));
+  const url = proccess.env.BE_URL
+  const token = cookies().get("token")
+  try {
+    const response = await fetch(`${url}/api/events/${id}`, {
+      method: "GET", 
+      headers: {
+        headers: { 
+          'Content-Type': 'application/json',
+          "Authorization": `Bearer ${token}`
+        },
+      }
+    })
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
 
-  if (!item) {
-    return NextResponse.json({ message: "Item not found" }, { status: 404 });
+    const data = await response.json();
+    return NextResponse.json(data)
+  } catch (error){
+    
   }
-
-  return NextResponse.json(item); // Return the item with the given ID
 }
