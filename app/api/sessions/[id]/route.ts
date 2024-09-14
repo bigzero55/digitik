@@ -3,7 +3,7 @@ const token = cookies().get("token")
 
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const { id } = params;
-  const url = proccess.env.BE_URL
+  const url = process.env.BE_URL
   const token = cookies().get("token")
   try {
     const response = await fetch(`${url}/api/sessions/${id}`, {
@@ -28,7 +28,7 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
 
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
   const { id } = params;
-  const url = proccess.env.BE_URL
+  const url = process.env.BE_URL
   const token = cookies().get("token")
   const body = req.json()
   try {
@@ -55,7 +55,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {
   const { id } = params;
-  const url = proccess.env.BE_URL
+  const url = process.env.BE_URL
   const token = cookies().get("token")
   try {
     const response = await fetch(`${url}/api/sessions/${id}`, {
