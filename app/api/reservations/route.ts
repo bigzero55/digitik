@@ -5,7 +5,7 @@ export async function GET() {
   const token = cookies().get("token")
   const url = process.env.BE_URL
   try {
-    const response = await fetch(`${url}/api/sessions`, {
+    const response = await fetch(`${url}/api/reservations`, {
       method: "GET", 
       headers: {
         headers: { 
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
   const url = process.env.BE_URL
 
   try {
-    const response = await fetch(`${url}/api/sessions`, {
+    const response = await fetch(`${url}/api/reservations`, {
       method: "POST", 
       headers: {
         headers: { 
