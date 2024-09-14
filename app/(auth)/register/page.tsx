@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const Signup: React.FC = () => {
+export default function Signup () {
   const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -117,5 +117,3 @@ const Signup: React.FC = () => {
     </div>
   );
 };
-
-export default Signup;
