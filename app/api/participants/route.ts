@@ -25,7 +25,6 @@ export async function GET() {
   }
 }
 
-// Handle POST request (to add a new item)
 export async function POST(req: Request) {
   const body = await req.json();
   const token = cookies().get("token")
