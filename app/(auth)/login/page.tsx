@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 
-const Login: React.FC = () => {
+export default function Login() {
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -74,5 +74,3 @@ const Login: React.FC = () => {
     </div>
   );
 };
-
-export default Login;
