@@ -17,7 +17,6 @@ export async function GET() {
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
-
     const data = await response.json();
     return NextResponse.json(data)
   } catch (error) {
@@ -44,7 +43,6 @@ export async function POST(req: Request) {
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
-
     const data = await response.json();
     return NextResponse.json(data)
   } catch (error) {
