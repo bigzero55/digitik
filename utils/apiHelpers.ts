@@ -17,7 +17,7 @@ export const fetchFromAPI = async <T>(
     });
 
     if (!response.ok) {
-      const errorResponse = await response.json(); // Try to get error details
+      const errorResponse = await response.json(); 
       throw new Error(
         `API request failed with status ${response.status}: ${errorResponse?.message}`
       );
@@ -26,6 +26,6 @@ export const fetchFromAPI = async <T>(
     return response.json();
   } catch (error: any) {
     console.error(`Error fetching data from API: ${error.message}`);
-    throw error; // Re-throw to allow handling at a higher level
+    throw error; 
   }
 };
