@@ -8,3 +8,4 @@ export type Participant = {
   email: string;
   created_at: string; // Datetime format
 };
+
