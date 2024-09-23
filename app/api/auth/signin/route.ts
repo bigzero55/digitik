@@ -6,14 +6,12 @@ export async function POST(request: Request) {
   try {
     const { email, password } = await request.json();
 
-    // Melakukan request ke backend
     const response = await fetch(`${process.env.BE_URL}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
 
-    // Cek apakah response dari backend tidak OK
     if (!response.ok) {
       const errorData = await response.json();
       const { message, code } = errorData;
@@ -32,10 +30,9 @@ export async function POST(request: Request) {
       httpOnly: true,
     });
 
-    // Kembalikan response sukses
     return NextResponse.json({ data }, { status: 201 });
   } catch (err: any) {
-    // Jika ada error di server
+    
     return NextResponse.json(
       { error: 'Internal server error', details: err.message },
       { status: 500 }
