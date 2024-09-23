@@ -1,20 +1,27 @@
 'use client';
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
-export default function Signup () {
+export default function Signup() {
   const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false); // state untuk loading
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
+  const [success, setSuccess] = useState<string | null>(null);
+
+  const resetForm = () => {
+    setFullName('');
+    setUsername('');
+    setEmail('');
+    setPassword('');
+  };
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null); // Reset error
+    setError(null);
+    setSuccess(null);
     try {
       const response = await fetch('api/auth/signup', {
         method: 'POST',
@@ -30,15 +37,17 @@ export default function Signup () {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to signup. Please try again.');
+        const errorData = await response.json();
+        const { message, code } = errorData.error;
+        throw new Error(message);
       }
-      const data = await response.json();
-      console.log('Signup successful:', data);
+
+      setSuccess('Signup successful!');
     } catch (err: any) {
       setError(err.message);
-      console.error('Signup error:', err);
     } finally {
-      setLoading(false); // Menghentikan loading setelah permintaan selesai
+      setLoading(false);
+      resetForm();
     }
   };
 
@@ -100,11 +109,14 @@ export default function Signup () {
             />
           </div>
           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+          {success && (
+            <p className="txet-primary text-center mb-4">{success}</p>
+          )}
           <div className="form-control">
             <button
               type="submit"
               className={`btn btn-primary w-full`}
-              disabled={loading} // Disable button ketika loading
+              disabled={loading}
             >
               {loading && (
                 <span className="loading loading-dots loading-xs"></span>
@@ -116,4 +128,4 @@ export default function Signup () {
       </div>
     </div>
   );
-};
+}

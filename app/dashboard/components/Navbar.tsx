@@ -1,7 +1,7 @@
 'use client';
 import { useAuth } from '@/context/AuthContext';
 export default function Navbar() {
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   return (
     <div className="navbar bg-base-100 glass sticky">
@@ -62,7 +62,7 @@ export default function Navbar() {
             <li>
               <a className="justify-between">
                 Profile
-                <span className="badge">New</span>
+                <span className="badge">{user?.full_name}</span>
               </a>
             </li>
             <li>

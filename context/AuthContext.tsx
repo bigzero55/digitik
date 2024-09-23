@@ -2,10 +2,12 @@
 'use client';
 
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 interface User {
   email: string;
+  username: string;
+  full_name: string;
 }
 
 interface AuthContextProps {
@@ -39,8 +41,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
       // Assuming the server returns a user object or token
       const data = await response.json();
-      setUser({ email }); // Replace with actual user details if available
-      router.push('/dashboard');
+      const { user } = data;
+      setUser(user); // Replace with actual user details if available
+      console.log(user);
     } catch (err: any) {
       setError(err.message);
     }
