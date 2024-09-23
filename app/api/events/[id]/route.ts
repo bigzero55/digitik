@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-const token = cookies().get("token")
+import { cookies } from 'next/headers';
 
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const { id } = params;
