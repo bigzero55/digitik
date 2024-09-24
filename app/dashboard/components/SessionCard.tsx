@@ -19,7 +19,7 @@ const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
       onClick={handleClick}
     >
       <h2 className="text-xl font-bold mb-2">{session.name}</h2>
-      <p className="text-gray-600 mb-2">{session.desc}</p>
+      <p className="text-gray-600 mb-2">{session.description}</p>
       <p className="text-gray-500">Unix Code: {session.unix}</p>
     </div>
   );
