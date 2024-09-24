@@ -1,0 +1,248 @@
+[33mcommit 1772a6a2e23f53319dbfe1e56645a66e5d19ea3c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Acode <bigzero55@outlook.com>
+Date:   Tue Sep 24 05:12:20 2024 +0700
+
+    perbaiki error duplikat header
+
+[33mcommit 615fda7d093eeafcbbe29013795fcb3e8b828454[m
+Author: Abdul Rojak <abdulrozaaq5@outlook.co.id>
+Date:   Mon Sep 23 15:17:56 2024 +0700
+
+    perbaikan api
+
+[33mcommit 83e384c8b819a921744556ce6e8cb5bcaaf33fa6[m
+Author: Acode <bigzero55@outlook.com>
+Date:   Mon Sep 23 07:25:22 2024 +0700
+
+    perbaiki error
+
+[33mcommit ff77e98a487e6ff1a00787b8650aa92becc78827[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 23 01:40:37 2024 +0700
+
+    update app/api/participants/[id]/route.ts
+
+[33mcommit 4dcc9868e398d3b8f3b39639d3444697846ba427[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 23 01:36:42 2024 +0700
+
+    update app/sessions/[sessionId]/page.tsx
+
+[33mcommit 268b6588dad1a83436d6fcfb13a54241c59cc783[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 23 01:35:47 2024 +0700
+
+    update app/dashboard/events/register/page.tsx
+
+[33mcommit 0b2bce53fd543e80f7222ef7dd14fb66c17da259[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 23 01:34:10 2024 +0700
+
+    update app/api/validators/route.ts
+
+[33mcommit bbef0872f74a93d2073344297bc9b05957421e2c[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 22 04:22:01 2024 +0700
+
+    update app/api/validators/route.ts
+
+[33mcommit ab8f463cd1ceff2ccc0998c2a7b918170fcad3f0[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 16 18:40:04 2024 +0700
+
+    update hooks/useFetch.ts
+
+[33mcommit 9af0019f0ddda89b8fb5a9110ac9922ad0039c2b[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 16 12:39:43 2024 +0700
+
+    update hooks/useForm.ts
+
+[33mcommit 3d4a6ce52cd2793ae1071721f23f6c675166d059[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 16 12:35:28 2024 +0700
+
+    update hooks/useFetch.ts
+
+[33mcommit d0cf0d8e6506c46ebae3bed9abccebada6392e6f[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 16 05:15:21 2024 +0700
+
+    update hooks/useForm.ts
+
+[33mcommit 636c30f9cfbd89737d24dc92d422a823f26c5b43[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 16 05:14:23 2024 +0700
+
+    create hooks/useForm.ts
+
+[33mcommit adc1be764e064651dbe3138def3c29eaef46cef7[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 16 05:13:45 2024 +0700
+
+    update utils/exampleforwithvalidation.ts
+
+[33mcommit d17c54f4113d7f6abec09961b86341ba811ebe9b[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Mon Sep 16 05:04:43 2024 +0700
+
+    create utils/exampleforwithvalidation.ts
+
+[33mcommit 42ace463ea2fa9add9cfdf140e279d4028869c6a[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 23:47:38 2024 +0700
+
+    update utils/apiHelpers.ts
+
+[33mcommit f8ca9a2419fa2b55253546e09f4c320993aff217[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 23:45:14 2024 +0700
+
+    update hooks/useFetch.ts
+
+[33mcommit 6e38b444d0219e65900d853fa3aa0229d1d7bc20[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:31:07 2024 +0700
+
+    update types/verifieds.ts
+
+[33mcommit 50d7f4d641cbd289f772e0e4c92efd62a9eda755[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:30:09 2024 +0700
+
+    create types/verifieds.ts
+
+[33mcommit 66eeb073fbe19f4a0942b36a15f59c9d17d8792a[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:29:46 2024 +0700
+
+    update types/scanneds.ts
+
+[33mcommit a0618b2378429701469e83b3480c52bb0dae10b4[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:28:51 2024 +0700
+
+    create types/scanneds.ts
+
+[33mcommit 680dba063ee448d3f7586f37f025288b57a7a769[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:28:17 2024 +0700
+
+    update types/validators.ts
+
+[33mcommit 04d30fdc6b9e7fc4b35e645840999dc56abe9c14[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:27:16 2024 +0700
+
+    update types/validators.ts
+
+[33mcommit 563a8ed72d0b3c827ca40ec5ec7b2bcdb2a645d8[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:26:10 2024 +0700
+
+    create types/validators.ts
+
+[33mcommit b0c1d490727b3261cac6a0f592d7b6e3c5e4b031[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:25:27 2024 +0700
+
+    update types/reservations.ts
+
+[33mcommit df2db777cf3c828561e78e5b15795f102ad6406c[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:25:25 2024 +0700
+
+    update types/participants.ts
+
+[33mcommit ad4df0d99202f9472cf04aed6c4562f90724ab1d[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:24:40 2024 +0700
+
+    update types/reservations.ts
+
+[33mcommit 0ad2fc4f68d6b666070247a012a5466593e677c6[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:23:22 2024 +0700
+
+    create types/reservations.ts
+
+[33mcommit 41ebe3e962f04b01abd54d4ab8eec9e3b80f5823[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:21:53 2024 +0700
+
+    update types/payments.ts
+
+[33mcommit 8a8801316e3b1f0154e5a57e063afd86fbe5a92d[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:21:08 2024 +0700
+
+    update types/payments.ts
+
+[33mcommit 18343d0b7d2fffa2cbcc38afb71669c50ce72616[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:19:40 2024 +0700
+
+    create types/payments.ts
+
+[33mcommit ad2e3571b0cc02d5d2bac530291ee801698aa8fc[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:19:01 2024 +0700
+
+    update types/users.ts
+
+[33mcommit cb52ff9e8f7bc87d967784549bb02a4b181023df[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:18:22 2024 +0700
+
+    create types/users.ts
+
+[33mcommit ea8ba0339d128252a0b4082eff3e906c939e4659[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:17:47 2024 +0700
+
+    update types/participants.ts
+
+[33mcommit 96cb99f70bde5a4d9d4d97d1ff3d0cc0851f4a5b[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:16:25 2024 +0700
+
+    update types/sessions.ts
+
+[33mcommit fc297fa2104ae1f763a8e27778d748022be3e2c3[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 22:15:32 2024 +0700
+
+    update types/events.ts
+
+[33mcommit 1860946401148f266eb8a53df7867d5c8bd8641f[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 17:22:38 2024 +0700
+
+    update utils/apiHelpers.ts
+
+[33mcommit 0e41c0a17066df3fb3ee79006451dc6ba085221d[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sun Sep 15 17:22:36 2024 +0700
+
+    update utils/apiHelpers.ts
+
+[33mcommit aa7c4cfd427627c62e30edb21052b38f4dac22aa[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sat Sep 14 21:37:28 2024 +0700
+
+    update app/verify/page.tsx
+
+[33mcommit 01018b6db408ed0255b866f77455fe0a0d575237[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sat Sep 14 21:37:21 2024 +0700
+
+    update app/verify/page.tsx
+
+[33mcommit 7a9700ff4768936329f9916c0365ffa89896c0d8[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply.github.com>
+Date:   Sat Sep 14 21:31:26 2024 +0700
+
+    update app/verify/page.tsx
+
+[33mcommit 64a98a3844c2a1ca2b46f9aca91680e9f8ad850f[m
+Author: Abdul Rojak <122954244+bigzero55@users.noreply
