@@ -5,23 +5,21 @@ import React, { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 
 export default function Login() {
-  const { login } = useAuth();
+  const { login, error } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
 
     try {
-      // Memanggil fungsi login dari AuthContext
       await login(email, password);
     } catch (err: any) {
-      setError(err.message || 'Something went wrong.');
       setLoading(false); // Menghentikan loading jika terjadi error
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -73,4 +71,4 @@ export default function Login() {
       </div>
     </div>
   );
-};
+}

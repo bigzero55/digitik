@@ -1,8 +1,14 @@
 // context/AuthContext.tsx
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
-import { redirect, useRouter } from 'next/navigation';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from 'react';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 interface User {
   email: string;
@@ -23,6 +29,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const path = usePathname();
 
   const login = async (email: string, password: string) => {
     try {
@@ -33,17 +40,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       });
 
       if (!response.ok) {
-        const { message } = await response.json();
-        throw new Error(
-          message || 'Login failed. Please check your credentials.'
-        );
+        const data = await response.json();
+        const { code, message } = data.error;
+        setError(message);
+        throw new Error(message || 'Login failed. Please try again.');
       }
 
-      // Assuming the server returns a user object or token
-      const data = await response.json();
-      const { user } = data;
-      setUser(user); // Replace with actual user details if available
-      console.log(user);
+      const result = await response.json();
+      const { user } = result.data;
+      const newUser: User = {
+        email: user.email,
+        username: user.username,
+        full_name: user.full_name,
+      };
+      setUser(newUser);
+      router.push('/dashboard');
     } catch (err: any) {
       setError(err.message);
     }
